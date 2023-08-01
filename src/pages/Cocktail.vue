@@ -1,6 +1,6 @@
 <template>
-    <div class="text-5xl">
-            Home
+    <div>
+        Coctail
     </div>
 </template>
 
@@ -11,7 +11,5 @@
 </script>
 
 <style lang="scss" scoped>
-    div{
-        font-family: 'Raleway', sans-serif;
-    }
+
 </style>
