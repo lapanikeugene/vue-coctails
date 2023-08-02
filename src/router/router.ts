@@ -7,9 +7,9 @@ import CocktailRandom from '../pages/CocktailRandom.vue';
     // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
     history: createWebHistory(),
     routes:[
-      { path: '/', name:'Home', component: Home },
-      { path: '/coctails/:cid', name:'Cocktail', component: Coctail },
-      { path: '/random', name:'randomCoctail', component: CocktailRandom },
+      { path: '/', name:'Home', component: Home,   meta: { transition: 'slide-left' }, },
+      { path: '/cocktails/:cid', name:'Cocktail', component: Coctail,   meta: { transition: 'slide-right' }, },
+      { path: '/random', name:'randomCoctail', component: CocktailRandom,  meta: { transition: 'slide-right' }, },
     ], // short for `routes: routes`
   })
 

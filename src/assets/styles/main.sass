@@ -1,6 +1,12 @@
-@import variables
-*
+@import './variables'
+@import './element-plus'
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+* 
     box-sizing: border-box
+
 html,
 body
     margin: 0px
@@ -9,7 +15,8 @@ body
     line-height: 1.4
     font-family: 'Raleway', sans-serif
     color: $text
+    background: $background
     
 a
     color: inherit
-    
+
