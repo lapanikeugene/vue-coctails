@@ -3,7 +3,7 @@
         
     <div >
         
-            <AppLayout imgUrl="./src/assets/img/img1.jpg" :backFunc="removeIngridient" :isBackButHide="ing.value===null">
+            <AppLayout imgUrl="img1.jpg" :backFunc="removeIngridient" :isBackButHide="ing.value===null">
             <div class="flex items-center w-screen  md:w-[50vw]">
                 <section v-if="!ingredient || !cocktails" class="pt-[80px] p-0 text-center justify-center">
                     <div class="uppercase text-[32px] font-medium tracking-wide">Choose your drink</div>
@@ -37,7 +37,7 @@
                 <section  v-else class="pt-[80px] p-0 text-center justify-center mx-auto">
                     <div class="uppercase text-[32px] font-medium tracking-wide">Coctails with {{ ingredient }}</div>
                     <hr class="w-[100px] h-1 mx-auto mt-[32px] mb-0 ">
-                    <div class="cocktails grid grid-cols-2 lg:grid-cols-3 md:gap-4 items-center pt-16 overflow-auto max-h-[500px] ">
+                    <div class="cocktails grid grid-cols-2 lg:grid-cols-3 md:gap-4 items-center pt-16 overflow-x-hidden overflow-auto max-h-[500px] ">
                         <CocktailThumb  v-for="cocktail in cocktails" 
                                         :key="cocktail.idDrink"
                                         :cocktail="cocktail" />
