@@ -5,7 +5,7 @@ interface State {
     ingredients: any[]; // Change 'any[]' to the appropriate type for your ingredients
     ingredient: string | null; // Change 'number | string' to the appropriate type for your ingredient
     cocktails: any[]; // Change 'any[]' to the appropriate type for your cocktails
-    cocktail:string | null;
+    cocktail: any;
   }
 export const useRootStore = defineStore('coctails', {
   state: ():State =>( {
@@ -21,7 +21,8 @@ export const useRootStore = defineStore('coctails', {
         const data = await axios.get(INGRIDIENTS_URL);
         this.ingredients = data?.data?.drinks;
     },
-    async getCocktails(ingredient:string) {
+    async getCocktails(ingredient:string|null) 
+    { if(ingredient===null) return;
         const data = await axios.get(COCKTAILS_BY_INGR_URL,{
             params:{
                 'i':ingredient
@@ -45,7 +46,7 @@ export const useRootStore = defineStore('coctails', {
       console.log(this.cocktail)
   }
     ,
-    setIngredient(val:string){
+    setIngredient(val:string|null){
         this.ingredient = val;
       }
   },

@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
- const probs = defineProps(
+ defineProps(
     {
         cocktail:{
             type: Object,

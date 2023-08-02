@@ -27,15 +27,12 @@
         </section>
         <section>
             <swiper
-            :modules="modules"
             :slides-per-view="3"
             :space-between="50"
             @swiper="onSwiper"
             @slideChange="onSlideChange"
             class="w-[300px] md:w-[512px] mb-10"
-            :pagination="{ clickable: true }"
-
-            :scrollbar="{ draggable: true }"
+          
           >
             <swiper-slide v-for="(item,key) in swiperIngridients" :key="key" 
             class="text-sm flex flex-col text-center gap-y-2 justify-start items-center">
@@ -62,12 +59,11 @@
 
     // Import Swiper styles
     import 'swiper/css';
-    import { computed, ref } from 'vue';
+    import { computed } from 'vue';
     import AppLayout from '../components/AppLayout.vue'
     import { useRootStore } from '../stores/root';
 import { IMG_INGR } from '../constants';
     // console.log("open cocktail")
-    import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
     import 'swiper/css/navigation';
 
@@ -105,7 +101,7 @@ import { IMG_INGR } from '../constants';
     });
         
    
-    const onSwiper = (swiper) => {
+    const onSwiper = (swiper: any) => {
         console.log(swiper);
       };
       const onSlideChange = () => {

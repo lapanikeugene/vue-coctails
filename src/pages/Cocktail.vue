@@ -35,14 +35,13 @@
 </template>
 
 <script lang="ts" setup>
-    import { computed, ref } from 'vue';
-    import { useRoute, useRouter } from 'vue-router'
+    import { computed} from 'vue';
+    import { useRoute} from 'vue-router'
     import AppLayout from '../components/AppLayout.vue'
     import { useRootStore } from '../stores/root';
     // console.log("open cocktail")
 
     const route = useRoute();
-    const router = useRouter();
     const cocktailId = computed(()=>route.params).value.cid;
     console.log(cocktailId, String(cocktailId));
     const rootStore = useRootStore();
